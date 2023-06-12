@@ -24,24 +24,18 @@
         <table class="table table-secondary table-striped text-center table-hover">
             <tr>
                 <th>Name</th>
-                <th>State</th>
-                <th>Salary</th>
-                <th>Grade</th>
-                <th>Room</th>
-                <th>Telenum</th>
+                <th>Row</th>
+                <th>Seat</th>
                 <th>Picture</th>
-                <th>Keywords</th>
+                <th>Notes</th>
              </tr>
         {% for item in list4 %}
         <tr>
             <td>{{item[0]}}</td>
             <td>{{item[1]}}</td>
             <td>{{item[2]}}</td>
-            <td>{{item[3]}}</td>
+            <td><img src={{link}}{{item[3]}} width="50" height="50"></td>
             <td>{{item[4]}}</td>
-            <td>{{item[5]}}</td>
-            <td><img src={{link}}{{item[6]}} width="50" height="50"></td>
-            <td>{{item[7]}}</td>
         </tr>
         {% endfor %} 
         </table>  

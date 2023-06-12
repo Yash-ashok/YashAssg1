@@ -1,0 +1,192 @@
+{% extends 'base.html' %}
+{% include 'headers.html' %}
+
+
+{% block title%} Home {% endblock %}
+
+{% block body %} 
+
+<hr style="height:5px;border-width:0;color:rgb(66, 66, 66);background-color:rgb(66, 66, 66)">
+
+<!--Begin view data for people-->
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <div class="alert alert-info h5 text-center" role="alert"> -->
+                Click here to view all the Data
+            <!-- </div> -->
+            <br>
+            <form action="/people", method="POST" , method = "GET">
+                <input class="btn btn-primary" type="submit" id="button" value="Click here"/>
+            </form>
+
+            <br>
+            <form action="/speople", method="POST" , method = "GET">
+                <input class="btn btn-primary" type="submit" id="button" value="Click here"/>
+            </form>
+        <!-- </div> -->
+<!--End view data for people-->
+
+<!--Begin view data for people whose salary is greater than 90000-->
+        <!-- <div class="col-md-6 text-center">
+            <div class="alert alert-info h5 text-center" role="alert"> -->
+                 Click here to View pictures of people earning > 90K
+              <!-- </div> -->
+            <br>
+            <form action="/salgreaterthan", method="POST" , method = "GET">
+                <input class="btn btn-primary" type="submit" id="button" value="Click here"/>
+            </form>
+        <!-- </div>
+    </div>
+</div> -->
+<!--End view data for people whose salary is greater than 90000-->
+
+<br>
+<hr>
+<br>
+
+<!--Begin view a picture of a person-->
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <div class="alert alert-info h5 text-center" role="alert"> -->
+                Search a name and view the picture
+             <!-- </div> -->
+            <form action="/displaypic", method="POST" , method = "GET">
+                <label id="labels">Enter a name</label>
+                <input type="text" id="namedata" name="namedata" placeholder="Ex: Jason" required/>
+                <br><br>
+                <input class="btn btn-primary" type="submit" id="button" value="Submit"/>
+            </form>
+        <!-- </div> -->
+<!--Begin view a picture of a person-->
+
+
+<!--Begin delete record of a person-->
+        <!-- <div class="col-md-6 text-center">
+            <div class="alert alert-info h5 text-center" role="alert"> -->
+                Enter a name and delete the record
+            <!-- </div> -->
+            <form action="/deleterecord", method="POST" , method = "GET">
+            <label id="labels">Enter a name</label>
+            <input type="text" id="namedataone" name="namedataone" placeholder="Ex: Jason" required/>
+            <br><br>
+            <input class="btn btn-danger" type="button" id="button" value="Delete" data-bs-toggle="modal" data-bs-target="#mymodal"/>
+            
+            <!--Begin Delete modal-->
+            <div id="mymodal" class="modal fade" role="dialog" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+        
+                        <div class="modal-header">
+                            <h4 class="modal-title">Are you sure?</h4>
+                        </div>
+                        <div class="modal-body me-auto">
+                            <h6>Are you sure you want to delete this record?</h6>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <input class="btn btn-danger" type="submit" id="button" value="Delete"/> 
+                        </div>
+        
+                        </div>
+                </div>
+            </div>
+        </form>
+            <!--End Delete modal-->
+    
+        </div>
+
+<!--End delete record of a person-->
+    </div>
+</div>
+
+<br>
+<hr>
+<br>
+
+<!--Begin upload a picture-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 text-center">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-success alert-dismissible fade show h6" role="alert">
+               <strong> {{ message }} </strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            
+            {% else %}
+
+            <div class="alert alert-success alert-dismissible fade show h6" role="alert">
+                <strong> {{flashone}} </strong>
+                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+             </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+            <div class="alert alert-info h5 text-center" role="alert">
+                Upload or Update a Picture
+             </div>
+            <form action="/uploadpic", method="POST" , method = "GET" enctype="multipart/form-data">
+                <label id="labels">Enter a name</label>
+                <input type="text" id="namedatapic" name="namedatapic" placeholder="Ex: Jason" required/>
+                <br><br>
+                <div class="row justify-content-md-center">
+                    <div class="col-md-8">
+                        <input type="file" class="form-control" id="image" name="image" accept="image/*" required/>
+                    </div>
+                </div>
+                <br>
+                <input class="btn btn-primary" type="submit" id="button" value="Upload"/>
+            </form>
+        </div>
+<!--End upload a picture-->
+
+
+<!--Begin change a person's salary-->
+        <!-- <div class="col-md-6 text-center">
+            <div class="alert alert-info h5 text-center" role="alert"> -->
+                <h1>Change a person's num</h1>
+            <!-- </div>   -->
+            <form action="/changesal", method="POST" , method = "GET" enctype="multipart/form-data">
+                <label id="labels">Enter a name</label>
+                <input type="text" id="namedatasal" name="namedatasal" placeholder="Ex: Jason" required/>
+                <br><br>
+                <label id="labels">Enter a person's num</label>
+                <input type="text" id="persal" name="persal" placeholder="Ex: 10" required/>
+                <br>
+                <br>
+                <input class="btn btn-primary" type="submit" id="button" value="Update"/>
+            </form>
+        </div>
+<!--End change a person's salary-->
+
+    </div>
+</div>
+
+<hr>
+
+<div class="container mb-3">
+    <div class="row">
+        <div class="col text-center">
+            <div class="alert alert-info h5 text-center" role="alert">
+                Change a person's keyword
+            </div>  
+            <form action="/keyword", method="POST" , method = "GET" enctype="multipart/form-data">
+                <label id="labels">Enter a name</label>
+                <input type="text" id="namechange" name="namechange" placeholder="Ex: Jason" required/>
+                <br><br>
+                <label id="labels">Enter keyword</label>
+                <input type="text" id="keychange" name="keychange" placeholder="Ex: Not so nice anymore" required/>
+                <br>
+                <br>
+                <input class="btn btn-primary" type="submit" id="button" value="Update"/>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

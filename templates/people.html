@@ -1,0 +1,57 @@
+<!-- {% extends 'base.html' %}
+{% include 'headers.html' %} -->
+
+
+<!-- {% block title%} People {% endblock %}
+
+{% block body %}  -->
+
+<!-- <hr style="height:5px;border-width:0;color:rgb(66, 66, 66);background-color:rgb(66, 66, 66)"> -->
+
+<!--The info area -->
+<!-- <div class="container">
+    <div class="alert alert-info h5 text-center" role="alert"> -->
+        Name Year and Picture for all the people
+    <!-- </div>   -->
+    <!-- <div class="alert alert-info h5 text-center" role="alert"> -->
+        There are totally {{count}} people
+    <!-- </div>  -->
+<!-- </div>  -->
+
+<!--The Table area -->
+<div class="container">
+<table class="table">
+    <tbody>
+        <table class="table table-secondary table-striped text-center table-hover">
+            <tr>
+                <th>Name</th>
+                <th>Year</th>
+                <th>Picture</th>
+                <!-- <th>Grade</th>
+                <th>Room</th>
+                <th>Telenum</th>
+                <th>Picture</th>
+                <th>Keywords</th> -->
+             </tr>
+        {% for item in list1 %}
+        <tr>
+            <td>{{item[0]}}</td>
+            <td>{{item[1]}}</td>
+            <!-- <td>{{item[2]}}</td> -->
+            <!-- <td>{{item[3]}}</td>
+            <td>{{item[4]}}</td>
+            <td>{{item[5]}}</td>
+            <td><img src={{link}}{{item[6]}} width="50" height="50"></td>
+            <td>{{item[7]}}</td> -->
+            {% if item[2] %}
+            <td><img src={{link}}{{item[2]}} width="50" height="50"></td>
+            {% else %}
+            <td> Image not found</td>
+            {% endif %}
+        </tr>
+        {% endfor %} 
+        </table>  
+    </tbody>
+   </table>
+</div>
+<!-- {% endblock %} -->

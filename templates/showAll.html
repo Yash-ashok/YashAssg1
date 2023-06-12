@@ -1,0 +1,31 @@
+<h1>Name Year and Picture for all the people</h1>
+<table class="table">
+    <tbody>
+        <table class="table table-secondary table-striped text-center table-hover">
+            <tr>
+                <th>Name</th>
+                <th>Year</th>
+                <th>Picture</th>
+                <!-- <th>Grade</th>
+                <th>Room</th>
+                <th>Telenum</th>
+                <th>Picture</th>
+                <th>Keywords</th> -->
+             </tr>
+        {% for item in list1 %}
+        <tr>
+            {% if item[2] and item[1] or item[0] %}
+          
+            <td>{{item[0]}}</td>
+            <td>{{item[1]}}</td>
+            <td><img src={{link}}{{item[2]}} width="50" height="50"></td>
+            
+            {% else %} 
+            <br>
+            <h1></h1>
+            {% endif%}
+        </tr>
+        {% endfor %} 
+        </table>  
+    </tbody>
+   </table>

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% include 'headers.html' %}
+
+
+{% block title%} Pictures of people who earn more than 90k {% endblock %}
+
+{% block body %}
+
+<hr style="height:5px;border-width:0;color:rgb(66, 66, 66);background-color:rgb(66, 66, 66)">
+
+<div class="container">
+<h3 style="text-align: center;">Here are the pictures of all the people whose salary is greater than 90000</h3>
+<br>
+<table class="table">
+    <tbody>
+        <table class="table table-secondary table-striped table-bordered text-center table-hover">
+        <tr>
+           <th>Picture</th>
+        </tr>
+        {% for item in list3 %}
+            {% if ' ' not in item %}
+                <tr>
+                    <td><img src={{link}}{{item[0]}} width="50" height="50"></td>
+                </tr>
+            {% else %}
+            <tr>
+                <td>Picture not Available</td>
+            </tr>
+            {% endif %}
+        {% endfor %}
+        </table>
+    </tbody>
+</table>
+
+</div>
+
+{% endblock %}

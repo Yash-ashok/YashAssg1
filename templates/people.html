@@ -27,22 +27,11 @@
                 <th>Name</th>
                 <th>Seat</th>
                 <th>Picture</th>
-                <!-- <th>Grade</th>
-                <th>Room</th>
-                <th>Telenum</th>
-                <th>Picture</th>
-                <th>Keywords</th> -->
              </tr>
         {% for item in list1 %}
         <tr>
             <td>{{item[0]}}</td>
             <td>{{item[2]}}</td>
-            <!-- <td>{{item[2]}}</td> -->
-            <!-- <td>{{item[3]}}</td>
-            <td>{{item[4]}}</td>
-            <td>{{item[5]}}</td>
-            <td><img src={{link}}{{item[6]}} width="50" height="50"></td>
-            <td>{{item[7]}}</td> -->
             {% if item[3] %}
             <td><img src={{link}}{{item[2]}} width="50" height="50"></td>
             {% else %}

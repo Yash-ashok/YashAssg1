@@ -27,19 +27,7 @@
         <!-- </div> -->
 <!--End view data for people-->
 
-<!--Begin view data for people whose salary is greater than 90000-->
-        <!-- <div class="col-md-6 text-center">
-            <div class="alert alert-info h5 text-center" role="alert"> -->
-                 Click here to View pictures of people earning > 90K
-              <!-- </div> -->
-            <br>
-            <form action="/salgreaterthan", method="POST" , method = "GET">
-                <input class="btn btn-primary" type="submit" id="button" value="Click here"/>
-            </form>
-        <!-- </div>
-    </div>
-</div> -->
-<!--End view data for people whose salary is greater than 90000-->
+
 
 <br>
 <hr>
@@ -50,7 +38,7 @@
     <div class="row">
         <div class="col-md-6 text-center">
             <div class="alert alert-info h5 text-center" role="alert"> -->
-                Search a name and view the picture
+                Search a row and view the name, seat number and  picture of the person
              <!-- </div> -->
             <form action="/displaypic", method="POST" , method = "GET">
                 <label id="labels">Enter a name</label>
@@ -69,7 +57,7 @@
             <!-- </div> -->
             <form action="/deleterecord", method="POST" , method = "GET">
             <label id="labels">Enter a name</label>
-            <input type="text" id="namedataone" name="namedataone" placeholder="Ex: Jason" required/>
+            <input type="text" id="namedataone" name="namedataone" placeholder="Ex: Yash" required/>
             <br><br>
             <input class="btn btn-danger" type="button" id="button" value="Delete" data-bs-toggle="modal" data-bs-target="#mymodal"/>
             
@@ -105,45 +93,6 @@
 <hr>
 <br>
 
-<!--Begin upload a picture-->
-<div class="container">
-    <div class="row">
-        <div class="col-md-6 text-center">
-            {% with messages = get_flashed_messages() %}
-            {% if messages %}
-            {% for message in messages %}
-            <div class="alert alert-success alert-dismissible fade show h6" role="alert">
-               <strong> {{ message }} </strong>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-            
-            {% else %}
-
-            <div class="alert alert-success alert-dismissible fade show h6" role="alert">
-                <strong> {{flashone}} </strong>
-                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-             </div>
-            {% endfor %}
-            {% endif %}
-            {% endwith %}
-            <div class="alert alert-info h5 text-center" role="alert">
-                Upload or Update a Picture
-             </div>
-            <form action="/uploadpic", method="POST" , method = "GET" enctype="multipart/form-data">
-                <label id="labels">Enter a name</label>
-                <input type="text" id="namedatapic" name="namedatapic" placeholder="Ex: Jason" required/>
-                <br><br>
-                <div class="row justify-content-md-center">
-                    <div class="col-md-8">
-                        <input type="file" class="form-control" id="image" name="image" accept="image/*" required/>
-                    </div>
-                </div>
-                <br>
-                <input class="btn btn-primary" type="submit" id="button" value="Upload"/>
-            </form>
-        </div>
-<!--End upload a picture-->
-
 
 <!--Begin change a person's salary-->
         <!-- <div class="col-md-6 text-center">
@@ -172,11 +121,11 @@
     <div class="row">
         <div class="col text-center">
             <div class="alert alert-info h5 text-center" role="alert">
-                Change a person's keyword
+                Change a person's notes
             </div>  
             <form action="/keyword", method="POST" , method = "GET" enctype="multipart/form-data">
                 <label id="labels">Enter a name</label>
-                <input type="text" id="namechange" name="namechange" placeholder="Ex: Jason" required/>
+                <input type="text" id="namechange" name="namechange" placeholder="Ex: Yash" required/>
                 <br><br>
                 <label id="labels">Enter keyword</label>
                 <input type="text" id="keychange" name="keychange" placeholder="Ex: Not so nice anymore" required/>

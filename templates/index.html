@@ -8,24 +8,8 @@
 
 <hr style="height:5px;border-width:0;color:rgb(66, 66, 66);background-color:rgb(66, 66, 66)">
 
-<!--Begin view data for people-->
-<!-- <div class="container">
-    <div class="row">
-        <div class="col-md-6 text-center">
-            <div class="alert alert-info h5 text-center" role="alert"> -->
-                Click here to view all the Data
-            <!-- </div> -->
-            <br>
-            <form action="/people", method="POST" , method = "GET">
-                <input class="btn btn-primary" type="submit" id="button" value="Click here"/>
-            </form>
 
-            <br>
-            <form action="/speople", method="POST" , method = "GET">
-                <input class="btn btn-primary" type="submit" id="button" value="Click here"/>
-            </form>
-        <!-- </div> -->
-<!--End view data for people-->
+
 
 
 
@@ -40,9 +24,9 @@
             <div class="alert alert-info h5 text-center" role="alert"> -->
                 Search a row and view the name, seat number and  picture of the person
              <!-- </div> -->
-            <form action="/displaypic", method="POST" , method = "GET">
-                <label id="labels">Enter a name</label>
-                <input type="text" id="namedata" name="namedata" placeholder="Ex: Jason" required/>
+            <form action="/people", method="POST" , method = "GET">
+                <label id="labels">Enter any Row number</label>
+                <input type="text" id="namedata" name="namedata" placeholder="Ex: Yash" required/>
                 <br><br>
                 <input class="btn btn-primary" type="submit" id="button" value="Submit"/>
             </form>
